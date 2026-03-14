@@ -67,7 +67,7 @@ tca_analyze <- function(from, B, Omega, intermediates, K, h, order,
   mode <- match.arg(mode, c("overlapping", "exhaustive_3way", "exhaustive_4way"))
 
   if (mode %in% c("exhaustive_3way", "exhaustive_4way") && length(intermediates) != 2) {
-    stop(mode, " requires exactly 2" intermediate variables.")
+    stop(mode, " requires exactly 2 intermediate variables.")
   }
 
      # Total effect
@@ -79,7 +79,7 @@ tca_analyze <- function(from, B, Omega, intermediates, K, h, order,
    th_vecs <- list()
    for (v in intermediates) {
      nv <- not_vars_for(v, K, h, order)
-     nt_vecs[[as.character(v)]m <- transmissionEffect(from, B, Omega, not_vars = nv)
+     nt_vecs[[as.character(v)]] <- transmissionEffect(from, B, Omega, not_vars = nv)
      th_vecs[[as.character(v)]] <- total_vec - nt_vecs[[as.character(v)]]
   }
 
@@ -92,25 +92,25 @@ tca_analyze <- function(from, B, Omega, intermediates, K, h, order,
 
   if (mode == "overlapping") {
     for (v in intermediates) {
-      nm <- paste0("Through", var_names[v])
-      channel_results[[nm]] <- vec_to_irf(th_vecs[[as.character(v)]m, K, h, order)
+      nm <- paste0("Through ", var_names[v])
+      channel_results[[nm]] <- vec_to_irf(th_vecs[[as.character(v)]], K, h, order)
       channel_names <- c(channel_names, nm)
     }
-    channel_results["Direct"] <- vec_to_irf(nt_all_vec, K, h, order)
+    channel_results[["Direct"]] <- vec_to_irf(nt_all_vec, K, h, order)
     channel_names <- c(channel_names, "Direct")
 
   } else if (mode == "exhaustive_3way") {
     v1 <- intermediates[1]; v2 <- intermediates[2]
-    nm1 <- paste0("Through", var_names[v1], " (incl.)")
+    nm1 <- paste0("Through ", var_names[v1], " (incl.)")
     channel_results[[nm1]] <- vec_to_irf(th_vecs[[as.character(v1)]], K, h, order)
-    nm2 <- paste0("Through", var_names[v2], " only")
+    nm2 <- paste0("Through ", var_names[v2], " only")
     channel_results[[nm2]] <- vec_to_irf(nt_vecs[[as.character(v1)]] - nt_all_vec, K, h, order)
-    channel_results["Direct"] <- vec_to_irf(nt_all_vec, K, h, order)
+    channel_results[["Direct"]] <- vec_to_irf(nt_all_vec, K, h, order)
     channel_names <- c(nm1, nm2, "Direct")
 
   } else if (mode == "exhaustive_4way") {
     v1 <- intermediates[1]; v2 <- intermediates[2]
-    th_v1 <- th_vecs[[as.character(v1)]m
+    th_v1 <- th_vecs[[as.character(v1)]]
     th_v2 <- th_vecs[[as.character(v2)]]
     th_or  <- total_vec - nt_all_vec
     th_and <- th_v1 + th_v2 - th_or 
@@ -229,7 +229,7 @@ print.tca_result <- function(x, target = NULL, ...) {
   for (nm in x$channel_names) {
     cat(sprintf(" | %12s", substr(nm, 1, 12)))
   }
-  IÐAQu ("\n")
+  cat("\n")
   cat(paste(rep("-", 70), collapse = ""), "\n")
 
   horizons <- unique(c(0, 1, 2, 4, 8, 12, 16, 20, x$h))
