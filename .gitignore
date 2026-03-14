@@ -1,1 +1,24 @@
-test
+﻿# R
+*.Rhistory
+*.Rdata
+*.Rproj.user
+*.Rcheck
+*.tar.gz
+src/*.o
+src/*.so
+src/*.dll
+
+# Stata
+*.log
+*.smcl
+*.gph
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# IDE
+.vscode/
+.idea/
