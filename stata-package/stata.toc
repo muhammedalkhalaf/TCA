@@ -1,0 +1,14 @@
+v 3
+d TCA — Transmission Channel Analysis for Stata
+d Muhammad Alkhalaf (acad.helper88@gmail.com)
+d
+d Implements Transmission Channel Analysis (TCA) for structural
+d vector autoregressive (SVAR) models following Wegner, Lieb, and
+d Smeekes (2025, arXiv:2405.18987).
+d
+d Decomposes impulse response functions into transmission channel
+d contributions using systems form representation and DAG path analysis.
+d
+d Distribution-Date: 20260313
+d
+p tca
