@@ -1,0 +1,21 @@
+v 3
+d TCA: Transmission Channel Analysis in Dynamic Models
+d
+d Implements Transmission Channel Analysis (TCA) for structural
+d vector autoregressive (SVAR) models following the methodology of
+d Wegner, Lieb, and Smeekes (2025) <arXiv:2405.18987>.
+d
+d TCA decomposes impulse response functions (IRFs) into contributions
+d from distinct transmission channels. Supports overlapping channels,
+d exhaustive 3-way and 4-way decompositions via inclusion-exclusion.
+d
+d Requires: Stata 14.0 or later
+d
+d Author: Muhammad Alkhalaf
+d Contact: acad.helper88@gmail.com
+d
+d Distribution-Date: 20260313
+d
+f ado/tca.ado
+f mata/tca.mata
+f help/tca.sthlp
