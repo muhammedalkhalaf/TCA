@@ -1,7 +1,7 @@
-{smcl}
+ï»¿{smcl}
 {* *! version 1.0.0  March 2026}{...}
-{vieweralsosee "[TSM \var" "help var"}{...}
-{vieweralsosee "[TS nvar" "help svar"}{...}
+{vieweralsosee "[TS] var" "help var"}{...}
+{vieweralsosee "[TS] svar" "help svar"}{...}
 {vieweralsosee "[TS] irf" "help irf"}{...}
 {viewerjumpto "Syntax" "tca##syntax"}{...}
 {viewerjumpto "Description" "tca##description"}{...}
@@ -174,7 +174,7 @@ precision.
 {pstd}
 {\bf:Example 2: After VAR estimation}
 
-{phang2}{cmd:.È webuse lutkepohl2, clear}{p_end}
+{phang2}{cmd:. webuse lutkepohl2, clear}{p_end}
 {phang2}{cmd:. var dln_inv dln_inc dln_consump, lags(1/2)}{p_end}
 {phang2}{cmd:. tca_from_var , from(1) intermediates(2) target(3) horizon(20) validate}{p_end}
 
