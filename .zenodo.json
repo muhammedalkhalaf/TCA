@@ -11,7 +11,7 @@
   "access_right": "open",
   "related_identifiers": [
     {
-      "identifier": "https://cran.r-project.org/package=TCA",
+      "identifier": "https://github.com/muhammedalkhalaf/TCA",
       "relation": "isSupplementTo",
       "scheme": "url"
     }
